@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div><h1>offer new class</h1></div>
+
+<form th:action="@{/classes/save}" th:object = "${class}" method="POST">
+						
+						
+						<div class ="form-group">
+							<label> class Date </label>
+							<input
+							type = "text"
+							name = "class_date"
+							th:field = "*{date}"
+							class = "form-control"
+							placeholder="Enter class date" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> class time </label>
+							<input
+							type = "text"
+							name = "class_time"
+							th:field = "*{time}"
+							class = "form-control"
+							placeholder="Enter class time" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> workout: </label>
+							 <select th:field="*{workout}" class="form-control" required>
+							 <th:block th:each="workout : ${listWorkouts}">
+							 <option th:text="${workout.workoutType}" th:value="${workout.workoutId}"/>
+							 </th:block>
+							 </select>
+							
+						</div>
+					
+						
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+</body>
+</html>

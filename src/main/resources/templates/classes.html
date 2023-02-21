@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>All classes</h1>
+<div><h1>class List</h1>
+<div>
+<table>
+			<thead>
+				<tr>
+				<th>class Id</th>
+					<th> date</th>
+					<th> time</th>
+					<th> workout </th>
+					<th> register </th>
+					 <th>update</th> 
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="class : ${listClasses}">
+				<td th:text="${class.classId}"></td>
+                    <td th:text="${class.date}"></td>
+                    <td th:text="${class.time}"></td>
+                       <td th:text="${class.workout.workoutType}"></td> 
+                    <td>
+                    <a th:href="@{/sign-up/{classId}(classId=${class.classId}}">Register</a>
+
+                    </td>
+              <td>
+                  
+                    <a th:href="@{/classes/{classId}(classId=${class.classId})}">cancel</a> 
+                    </td>
+                    </tr>
+			</tbody>
+		
+		</table>
+</div>
+</div>
+</body>
+</html>

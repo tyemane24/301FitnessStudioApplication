@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>All Workouts</h1>
+<div><h1>workout List</h1>
+<div>
+<table>
+			<thead>
+				<tr>
+					<th> type</th>
+					<th> price</th>
+					 <th>update</th> 
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="workout : ${listWorkouts}">
+                    <td th:text="${workout.workoutType}"></td>
+                    <td th:text="${workout.price}"></td>
+                <td>
+                   <a th:href="@{/workouts/edit/{workoutId}(workoutId=${workout.workoutId})}">edit</a>
+                    <a th:href="@{/workouts/{workoutId}(workoutId=${workout.workoutId})}">delete</a> 
+                    </td>
+                    </tr>
+			</tbody>
+		
+		</table>
+</div>
+</div>
+</body>
+</html>

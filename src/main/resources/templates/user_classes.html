@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Classes</title>
+</head>
+<body>
+    <h1>User Classes</h1>
+    <table>
+        <table>
+    <tr>
+    <th>email</th>
+       
+        <th>Class ID</th>
+    </tr>
+    <tr th:each="userClass : ${userClasses}">
+        <td th:text="${userClass.email}"></td>
+      
+        <td th:text="${userClass.classId}"></td>
+    </tr>
+</table>
+    </table>
+</body>
+</html>
