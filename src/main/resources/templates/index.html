@@ -1,16 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+ <link th:href="@{/index.css}" rel="stylesheet" />
 </head>
 <body>
-<h1>Welcome to 301FITNESSWORKS</h1>
-<a th:href="@{/workouts}">List workouts</a>
-<a th:href="@{/workouts/new}">Offer New workout</a>
- <a th:href="@{/classes}">List classes</a>
- <a th:href="@{/classes/new}"> Offer new classes</a>
- <a th:href="@{/user-classes}"> See user registered classes</a>
- <a th:href="@{/logout}">Logout</a>
+<div id="navbar">
+		<nav class="menu">
+			<ul>
+				<li><a th:href="@{/index}">Home</a></li>
+				<li><a th:href="@{/user-index}">Clients</a></li>
+				
+				<li><a th:href="@{/register}">Register Account</a></li>
+				<li><a th:href="@{/admin-index}">Admin</a></li>
+			</ul>
+		</nav> 
+	</div>
+<div id="container1">
+		<div id="background_img">
+			<img id="img" th:src="@{/images/bg3.jpeg}"
+				
+				alt="" width="100%" height="100%">
+				</div>
+		
+	
+		<p id="title">
+			<b>301FitnessStudio</b>
+		</p>
+	</div>
+<div id="background2">
+		<p>
+			<br>
+			<br>
+			<br>301FitnessStudio welcomes you to our web application! You are the focus of our virtual
+			 and in-person personal training at 301Fitness! Depending on the level of difficulty you want, 
+			 we offer a variety of group and personal training sessions, including yoga, zumba, HIIT workouts, and more! <br>
+			<br>
+			<Br>
+			<Br> We'll keep you inspired, make sure you train sensibly, 
+			and turn each workout into a fun time. You'll make the most of both your time and your own potential. We offer training sessions Sunday-Monday, all costs
+			ranging from $25-$60 based on level. Create an account to see our weekly updated schedule and sign up for a session! 
+		</p>
+	</div>
+	
+	<footer>
+		<p>&copy Tsion Yemane Development 2022. All Rights Reserved.</p>
+	</footer>
+	
+	
+
+
+
+
 </body>
 </html>

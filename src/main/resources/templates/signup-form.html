@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>301Fitness Workouts</title>
-<link th:href="@{/admin_workouts.css}" rel="stylesheet"/>
+<link th:href="@{/signup_form.css}" rel="stylesheet"/>
 
 </head>
 <body>
@@ -17,31 +17,27 @@
 			</ul>
 		</nav>
 	</div>
-
 	<div id="content">
-	
-	<Br><Br><Br><br>
-		<h1 style="text-align:center;">Registered Classes </h1><br><Br>
-		<div class="workouts_table_wrapper">
-		<table class = "workouts_table">
-    <thead>
-        <tr>
-            <th>User ID</th>
-            <th>Class ID</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="userClass : ${userClasses}">
-            <td th:text="${userClass[0]}"></td>
-            <td th:text="${userClass[1]}"></td>
-        </tr>
-    </tbody>
-</table>
-</div>
-</div>
-	
+
 		
-			<div id="side">
+		<Br><Br>
+	
+<form id="user_form" th:action="@{/sign-up}" method="post">
+  <label for="user">User:</label>
+  <select id="user" name="userId">
+    <option th:each="user : ${users}" th:value="${user.userId}" th:text="${user.email}"></option>
+  </select>
+  <br><br><Br>
+  <label for="class">Workout Class:</label>
+  <select id="class" name="classId">
+    <option th:each="workoutClass : ${classes}" th:value="${workoutClass.classId}"th:text="${workoutClass.classId}"></option>
+  </select>
+  <br><br><br><br><br>
+  <button type="submit">Sign Up</button>
+</form>
+</div>
+
+<div id="side">
 			<div id="navbar2">
 			<h2> </h2>
 <nav class="menu2">
@@ -60,5 +56,8 @@
 		<p>&copy Tsion Yemane Development 2022. All Rights Reserved.</p>
 	</footer>
 	
+</body>
+</html>
+
 </body>
 </html>

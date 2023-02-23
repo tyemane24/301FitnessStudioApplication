@@ -6,6 +6,8 @@ import java.util.*;
 
 import jakarta.persistence.*;
 
+//User entity model, representing user records
+
 @ToString
 @EqualsAndHashCode
 @AllArgsConstructor
@@ -25,7 +27,7 @@ public class User {
 	@Column
 	private String password;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name = "user_role",
 			joinColumns = @JoinColumn(name = "user_id"),
@@ -56,12 +58,7 @@ public class User {
 		this.roles = roles;
 	}
 	
-	public void assignRole(Role role) {
-		this.roles.add(role);
-	}
-	public void removeRole(Role role) {
-	this.roles.remove(role);
-	}
+	
 
 public void addClass(WorkoutClass workoutClass) {
 	this.workoutClasses.add(workoutClass);

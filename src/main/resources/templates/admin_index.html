@@ -2,8 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>301Fitness Workouts</title>
-<link th:href="@{/admin_workouts.css}" rel="stylesheet"/>
+<title>Insert title here</title>
+<link th:href="@{/admin_index.css}" rel="stylesheet"/>
 
 </head>
 <body>
@@ -21,25 +21,22 @@
 	<div id="content">
 	
 	<Br><Br><Br><br>
-		<h1 style="text-align:center;">All Workouts </h1><br><Br>
-		<div class="workouts_table_wrapper">
-		<<table class = "workouts_table">
+		<h1 style="text-align:center;">All Users </h1><br><Br>
+		<div class="users_table_wrapper">
+		<table class = "users_table">
 			<thead>
 				<tr>
-					<th> Name</th>
-					<th> Price</th>
-					 <th>Update</th> 
+					<th> User Id </th>
+					<th> Email </th>
+					
 				</tr>
 			</thead>
 			
 			<tbody>
-				<tr th:each="workout : ${listWorkouts}">
-                    <td th:text="${workout.workoutType}"></td>
-                    <td th:text="${workout.price}"></td>
-                <td>
-                   <a th:href="@{/workouts/edit/{workoutId}(workoutId=${workout.workoutId})}">Edit</a>
-                    <a th:href="@{/workouts/{workoutId}(workoutId=${workout.workoutId})}">Delete</a> 
-                    </td>
+				<tr th:each="user : ${listUsers}">
+                    <td th:text="${user.userId}"></td>
+                    <td th:text="${user.email}"></td>
+             
                     </tr>
 			</tbody>
 		

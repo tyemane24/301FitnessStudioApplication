@@ -21,22 +21,26 @@
 	<div id="content">
 	
 	<Br><Br><Br><br>
-		<h1 style="text-align:center;">Registered Classes </h1><br><Br>
+		<h1 style="text-align:center;">All Workouts </h1><br><Br>
 		<div class="workouts_table_wrapper">
 		<table class = "workouts_table">
-    <thead>
-        <tr>
-            <th>User ID</th>
-            <th>Class ID</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="userClass : ${userClasses}">
-            <td th:text="${userClass[0]}"></td>
-            <td th:text="${userClass[1]}"></td>
-        </tr>
-    </tbody>
-</table>
+			<thead>
+				<tr>
+					<th> Name</th>
+					<th> Price</th>
+					 
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="workout : ${listWorkouts}">
+                    <td th:text="${workout.workoutType}"></td>
+                    <td th:text="${workout.price}"></td>
+               
+                    </tr>
+			</tbody>
+		
+		</table>
 </div>
 </div>
 	
@@ -46,7 +50,7 @@
 			<h2> </h2>
 <nav class="menu2">
 			<ul>
-				<li> <a th:href="@{/user-workouts}">Workouts Offered</a> </li>
+		<li> <a th:href="@{/user-workouts}">Workouts Offered</a> </li>
 			
  			<li><a th:href="@{/user-view-classes}">Upcoming Classes</a></li>
  			

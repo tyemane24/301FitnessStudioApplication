@@ -1,44 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>301Fitness Workouts</title>
+<link th:href="@{/new_workout.css}" rel="stylesheet"/>
+
 </head>
 <body>
-<div><h1>offer new class</h1></div>
+	<div id="navbar">
+		<nav class="menu">
+			<ul>
+				<li><a th:href="@{/index}">Home</a></li>
+				<li><a th:href="@{/admin-index}">Admin</a></li>
+				
 
-<form th:action="@{/classes/save}" th:object = "${class}" method="POST">
+			</ul>
+		</nav>
+	</div>
+	<div id="content">
+	<h1>New Class</h1>
+
+<form id = "workout_form" th:action="@{/classes/save}" th:object = "${class}" method="POST">
 						
 						
 						<div class ="form-group">
-							<label> class Date </label>
+							<label> Class Date </label>
 							<input
+							id="date"
 							type = "text"
 							name = "class_date"
 							th:field = "*{date}"
 							class = "form-control"
 							placeholder="Enter class date" 
 							/>
-						</div>
+						</div> <Br><br>
 						
 						<div class ="form-group">
-							<label> class time </label>
+							<label> Class Time </label>
 							<input
+							id="time"
 							type = "text"
 							name = "class_time"
 							th:field = "*{time}"
 							class = "form-control"
 							placeholder="Enter class time" 
 							/>
-						</div>
+						</div><br><br>
 						
 						<div class ="form-group">
-							<label> workout: </label>
+							<label> Workout: </label>
 							 <select th:field="*{workout}" class="form-control" required>
 							 <th:block th:each="workout : ${listWorkouts}">
 							 <option th:text="${workout.workoutType}" th:value="${workout.workoutId}"/>
 							 </th:block>
-							 </select>
+							 </select><br><br><br>
 							
 						</div>
 					
@@ -49,5 +64,26 @@
 							</button>
 						</div>
 					</form>
+					</div>
+					
+<div id="side">
+			<div id="navbar2">
+			<h2> </h2>
+<nav class="menu2">
+			<ul>
+			<li> <a th:href="@{/workouts}">Workouts Offered</a> </li>
+			<li><a th:href="@{/workouts/new}"> Add Workout</a></li>
+ 			<li><a th:href="@{/classes}">Upcoming Classes</a></li>
+ 			<li><a th:href="@{/classes/new}"> Add New Class</a></li>
+			<li> <a th:href="@{/userclasses}"> See User Registered Classes</a> </li>
+
+			</ul>
+		</nav>
+	</div>
+	</div>
+<footer>
+		<p>&copy Tsion Yemane Development 2022. All Rights Reserved.</p>
+	</footer>
+	
 </body>
 </html>

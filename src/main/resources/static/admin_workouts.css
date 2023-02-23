@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	
+}
+menu {
+	margin: 0 auto;
+	width: 1170px;
+}
+
+.menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: right;
+	
+}
+
+.menu ul li {
+	
+	display: inline-block;
+	border-right: 1px solid #bbb;
+}
+
+.menu ul li:nth-child(1) {
+	float: left;
+}
+
+.menu ul li:nth-child(2) {
+	float: left;
+}
+
+.menu ul li:nth-child(3) {
+	float: right;
+}
+
+
+.menu ul li a {
+	color: white;
+	font-size: 24px;
+	text-decoration: none;
+	display: block;
+	padding: 10px 20px;
+}
+
+.menu ul li a:hover {
+	background-color: #333;
+}
+
+#navbar {
+	width: 100%;
+	position: relative;
+	background: black;
+	height: 50px;
+	display: flex;
+	top: 0;
+	position:fixed;
+	z-index:1;
+}
+#content {
+	float: right;
+	padding: 20px;
+	width: 80%;
+	background-color: #797979;
+	height: 100vh;
+	
+}
+
+.scrollit {
+    overflow:scroll;
+    height:100px;
+}
+
+#side {
+	float: left;
+	width: 20%;
+	height: 100vh;
+	background-color: #30365e;
+	padding: 60px;
+	top: 0%;
+	color:white;
+	
+	
+}
+
+th {
+ background-color:#4983ea;;
+  color: white;
+}
+
+tr:nth-child(even) {background-color: #eaeaea;}
+
+.menu2 ul {
+	list-style: none;
+}
+
+.menu2 ul li {
+	border-bottom: 1px solid #bbb;
+	
+}
+td{
+text-align: center;
+padding: 10px;
+}
+
+
+
+table, th, td {
+  border: 1px solid;
+}
+.workouts_table_wrapper {
+  height: 500px;
+  overflow-y: scroll; 
+}
+
+.workouts_table {
+  width: 100%; 
+  height:70%;
+}
+
+
+
+.menu2 ul li a {
+	color: white;
+	font-size: 24px;
+	text-decoration: none;
+	padding:10px 20px;
+	display:block;
+}
+.menu2 ul li a:hover {
+	background-color: #000000;
+}
+footer{
+	height:20px;
+	font-size: 18px;
+	text-align:center;
+	background: #c0c0c0;
+}

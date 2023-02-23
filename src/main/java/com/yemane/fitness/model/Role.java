@@ -3,6 +3,8 @@ package com.yemane.fitness.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+//Role entity model to represent role of each user
+
 @ToString
 @EqualsAndHashCode
 @AllArgsConstructor

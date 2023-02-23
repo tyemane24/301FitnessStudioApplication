@@ -1,18 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>301Fitness Workouts</title>
+<link th:href="@{/new_workout.css}" rel="stylesheet"/>
+
 </head>
 <body>
-<div><h1>Create New workout</h1></div>
+	<div id="navbar">
+		<nav class="menu">
+			<ul>
+				<li><a th:href="@{/index}">Home</a></li>
+				<li><a th:href="@{/admin-index}">Admin</a></li>
+				
 
-<form th:action="@{/workouts/save}" th:object = "${workout}" method="POST">
+			</ul>
+		</nav>
+	</div>
+	
+	<div id="content">
+<h1>Offer New Workout</h1>
+
+<form id="workout_form" th:action="@{/workouts/save}" th:object = "${workout}" method="POST">
 						
 						
 						<div class ="form-group">
-							<label> workout Type </label>
+							<label> Workout Type </label>
 							<input
+							id = "type"
 							type = "text"
 							name = "workoutType"
 							th:field = "*{workoutType}"
@@ -20,10 +35,11 @@
 							placeholder="Enter workout type" 
 							/>
 						</div>
-						
+						<Br><Br>
 						<div class ="form-group">
 							<label> Price </label>
 							<input
+							id = "price"
 							type = "text"
 							name = "price"
 							th:field = "*{price}"
@@ -31,7 +47,7 @@
 							placeholder="Enter price" 
 							/>
 						</div>
-						
+						<Br><br><br>
 						
 					
 						
@@ -41,5 +57,28 @@
 							</button>
 						</div>
 					</form>
+					</div>
+					
+					<div id="side">
+			<div id="navbar2">
+			<h2> </h2>
+<nav class="menu2">
+			<ul>
+			<li> <a th:href="@{/workouts}">Workouts Offered</a> </li>
+			<li><a th:href="@{/workouts/new}"> Add Workout</a></li>
+ 			<li><a th:href="@{/classes}">Upcoming Classes</a></li>
+ 			<li><a th:href="@{/classes/new}"> Add New Class</a></li>
+			<li> <a th:href="@{/userclasses}"> See User Registered Classes</a> </li>
+
+			</ul>
+		</nav>
+	</div>
+	</div>
+<footer>
+		<p>&copy Tsion Yemane Development 2022. All Rights Reserved.</p>
+	</footer>
+	
+</body>
+</html>
 </body>
 </html>

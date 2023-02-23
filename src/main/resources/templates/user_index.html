@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link th:href="@{/user_index.css}" rel="stylesheet"/>
+<script type="text/javascript" th:src="@{/js/userindex.js}"></script>
+</head>
+<body>
+	<div id="navbar">
+		<nav class="menu">
+			<ul>
+				<li><a th:href="@{/index}">Home</a></li>
+				<li><a th:href="@{/user-index}">Clients</a></li>
+				
+
+			</ul>
+		</nav>
+	</div>
+
+	<div id="content">
+	<Br><Br><Br><br>
+		<h1>Get Results You Can See and Feel</h1>
+		<Br>
+		<p style="color:white;">By taking group exercise courses, you can benefit not only from improved physical health but also from improved mental health. 
+		A simple sense of belonging to a team, according to studies, can boost motivation. Even if you're working alone, the spirit of cooperation
+		 can motivate you to finish a challenging task. The drive to exercise is sometimes necessary. You may hold yourself accountable by
+		  maintaining a consistent group fitness regimen. You'll be more likely to show up if you know the class meets at a specific time every day.
+		  The fact that you work with a professional is another key advantage of group fitness courses.
+You can maintain proper exercise form with the assistance of a qualified fitness teacher. In particular, if you're a newbie or have never engaged in
+ the kinds of exercises the programs are presenting, this can help prevent strain or injury.</p>
+
+
+		<Br>
+		
+		
+		<br>
+		<p style="text-align: center; font-size:25px;"><b>Sign Up For A Class Today!</b>
+		
+		<br><br>
+		
+		<div class="slideshow-container">
+
+			<div class="Slides fade">
+				<img th:src="@{/images/slide1.jpeg}"
+					style="width: 60%; height: 20%">
+
+			</div>
+
+			<div class="Slides fade">
+				<img th:src="@{/images/slide2.jpeg}"
+					style="width: 60%; height: 20%">
+
+			</div>
+
+			<div class="Slides fade">
+				<img th:src="@{/images/slide3.jpeg}"
+				style="width: 60%; height: 20%">
+
+			</div>
+
+			<script>
+				window.onload(startSlides());
+				</script>
+
+			<a class="prev" onclick="plusSlides(-1)">❮</a> 
+			<a class="next" onclick="plusSlides(1)">❯</a>
+
+		</div>
+		<br>
+		<br>
+		
+
+	</div>
+		
+			<div id="side">
+			<div id="navbar2">
+			<h2> </h2>
+<nav class="menu2">
+			<ul>
+			<li> <a th:href="@{/user-workouts}">Workouts Offered</a> </li>
+			
+ 			<li><a th:href="@{/user-view-classes}">Upcoming Classes</a></li>
+ 			
+			<li> <a th:href="@{/userclasses}"> Your Upcoming Classes</a> </li>
+
+			</ul>
+		</nav>
+	</div>
+	</div>
+<footer>
+		<p>&copy Tsion Yemane Development 2022. All Rights Reserved.</p>
+	</footer>
+	
+</body>
+</html>

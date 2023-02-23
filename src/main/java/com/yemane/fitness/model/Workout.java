@@ -2,6 +2,9 @@ package com.yemane.fitness.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+
+//Workout entity representing single workout offered at studio, including type and price
+
 @ToString
 @EqualsAndHashCode
 @AllArgsConstructor

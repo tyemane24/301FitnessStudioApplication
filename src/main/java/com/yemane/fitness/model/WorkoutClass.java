@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 
 import lombok.*;
 
+//WorkoutClass entity representing records of training sessions 
+
 @ToString
 @EqualsAndHashCode
 @AllArgsConstructor
@@ -33,6 +35,11 @@ public class WorkoutClass {
 		this.date = date;
 		this.time = time;
 		this.workout = workout;
+	}
+
+	public WorkoutClass(String time) {
+		super();
+		this.time = time;
 	}
 	
 	

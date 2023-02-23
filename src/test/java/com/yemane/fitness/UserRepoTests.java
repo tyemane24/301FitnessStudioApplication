@@ -5,15 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.test.annotation.Rollback;
 
-import com.yemane.fitness.model.Role;
+import org.springframework.test.annotation.Rollback;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.yemane.fitness.model.User;
-import com.yemane.fitness.model.WorkoutClass;
+
 import com.yemane.fitness.repository.UserRepository;
 
-import jakarta.persistence.EntityManager;
+//CRUD Junit Tests for UserRepository 
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
@@ -22,57 +22,37 @@ public class UserRepoTests {
 
 	@Autowired
 	private UserRepository user_repo;
-	
-	@Autowired
-	private TestEntityManager entityMgr;
-	
-//	@Test
-//	public void testCreateRoles() {
-//		
-//		Role adminRole = new Role("Administrator");
-//		Role visitorRole = new Role("Visitor");
-//		
-//		entityMgr.persist(adminRole);
-//		entityMgr.persist(visitorRole);
-//	}
-//	
-//	@Test
-//	public void testCreateNewUserWithOneRole() {
-//		Role adminRole = entityMgr.find(Role.class, 1l);
-//		User user = new User("sally@gmail.com", "sally123");
-//		user.assignRole(adminRole);
-//		user_repo.save(user);
-//	}
-	
-//	@Test
-//	public void testCreateNewUserWithTwoRoles() {
-//		Role adminRole = entityMgr.find(Role.class, 1);
-//		Role visitorRole = entityMgr.find(Role.class, 2);
-//		
-//		User user = new User("lidia@gmail.com", "lidia123");
-//		user.assignRole(visitorRole);
-//		user.assignRole(adminRole);
-//		user_repo.save(user);
-//	}
-	
-//	@Test
-//	public void testAddRoleToUser() {
-//		User user = user_repo.findById(1l).get();
-//		Role visitorRole = entityMgr.find(Role.class, 2);
-//		user.assignRole(visitorRole);
-//	}
+
+	// Create User test
 	@Test
-	public void testRegisterClassToUser() {
-		User user = user_repo.findById(3L).get();
-		WorkoutClass workoutClass = entityMgr.find(WorkoutClass.class, 5);
-		user.addClass(workoutClass);
+	public void testCreateUser() {
+		User user = user_repo.save(new User("Lauren@gmail.com", "lauren123"));
+		assertThat(user.getUserId()).isGreaterThan(17L);
 	}
-	
-//	@Test
-//	public void testRemoveRoleFromUser() {
-//		User user = user_repo.findById(1l).get();
-//		Role role = new Role(2l);
-//		user.removeRole(role);
-//	}
-//	
+
+	// Read/Get User test
+	@Test
+	public void getUserTest() {
+		User user = user_repo.findById(18L).get();
+		assertThat(user.getUserId()).isEqualTo(18L);
+	}
+
+	// Update User test
+	@Test
+	public void updateUserTest() {
+
+		User user = user_repo.findById(18L).get();
+		user.setEmail("lauren123@gmail.com");
+		User userUpdated = user_repo.save(user);
+		assertThat(userUpdated.getEmail()).isEqualTo("lauren123@gmail.com");
+	}
+
+	// Delete User test
+	@Test
+	public void deleteUserTest() {
+		User user = user_repo.findById(18L).get();
+		user_repo.delete(user);
+
+	}
+
 }
